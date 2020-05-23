@@ -1,6 +1,6 @@
 FROM python:3-alpine
-WORKDIR /usr/src/drone-ecs-deploy
+WORKDIR /usr/src/drone-plugin
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-ENTRYPOINT [ "python", "./ecs-deploy.py" ]
+ENTRYPOINT [ "python", "/usr/src/drone-plugin/ecs-deploy.py" ]
